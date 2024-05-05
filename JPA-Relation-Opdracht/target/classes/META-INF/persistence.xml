@@ -4,19 +4,30 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>be.intecbrussel.model.Customer</class>
-        <class>be.intecbrussel.model.EmailAdress</class>
+        <class>be.intecbrussel.model.EmailAddress</class>
         <class>be.intecbrussel.model.MedicalFile</class>
         <class>be.intecbrussel.model.Menu</class>
         <class>be.intecbrussel.model.Patient</class>
         <class>be.intecbrussel.model.User</class>
 
-        <class>be.intecbrussel.repository.RepositoryCustomerMenu</class>
-        <class>be.intecbrussel.repository.RepositoryPatientMedicalFile</class>
-        <class>be.intecbrussel.repository.RepositoryUserEmailAdress</class>
+        <class>be.intecbrussel.repository.RepositoryCustomer</class>
+        <class>be.intecbrussel.repository.RepositoryPatient</class>
+        <class>be.intecbrussel.repository.RepositoryUser</class>
+        <class>be.intecbrussel.repository.RepositoryMenu</class>
+        <class>be.intecbrussel.repository.RepositoryMedicalFile</class>
+        <class>be.intecbrussel.repository.RepositoryEmailAddress</class>
 
-        <class>be.intecbrussel.service.ServiceCustomerMenu</class>
-        <class>be.intecbrussel.service.ServicePatientMedicalFile</class>
-        <class>be.intecbrussel.service.ServiceUserEmailAdress</class>
+        <class>be.intecbrussel.service.ServiceCustomer</class>
+        <class>be.intecbrussel.service.ServicePatient</class>
+        <class>be.intecbrussel.service.ServiceUser</class>
+        <class>be.intecbrussel.service.ServiceMenu</class>
+        <class>be.intecbrussel.service.ServiceMedicalFile</class>
+        <class>be.intecbrussel.service.ServiceEmailAddress</class>
+
+        <class>be.intecbrussel.connection.EntityManagerProvider</class>
+
+        <class>be.intecbrussel.Main</class>
+
 
 
 

@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Setter@Getter
 @ToString
+@EqualsAndHashCode
 @Entity
 public class Menu {
     @Id
@@ -23,9 +24,8 @@ public class Menu {
     private boolean paid;
     private boolean vegetarian;
 
-    @EqualsAndHashCode.Exclude
-    @ToString.Exclude
-    @ManyToMany(mappedBy = "menu")
+
+    @ManyToMany(mappedBy = "menus")
     private List<Customer> customers = new ArrayList<Customer>();
 
 }
