@@ -12,9 +12,10 @@ public class RepositoryCustomer {
         entityManager.getTransaction().commit();
     }
     public Optional<Customer> findCustomer(EntityManager entityManager, long id) {
-        Customer optionalUser = entityManager.find(Customer.class, id);
-        return Optional.ofNullable(optionalUser);
+        Customer optionalCustomer = entityManager.find(Customer.class, 2L);
+        return Optional.ofNullable(optionalCustomer);
     }
+
 
     public void updateCustomer(EntityManager entityManager, Customer customer) {
         entityManager.getTransaction().begin();

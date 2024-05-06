@@ -168,17 +168,15 @@ public class Main {
         serviceCustomer.createCustomer(customer2);
         serviceCustomer.createCustomer(customer3);
 
-
-
         //create menu
         serviceMenu.createMenu(menu1);
         serviceMenu.createMenu(menu2);
         serviceMenu.createMenu(menu3);
 
         //find customer
-        Optional<Customer> customer = serviceCustomer.findCustomer(1);
+        Optional<Customer> customer = serviceCustomer.findCustomer(2);
         if (customer.isPresent()) {
-            System.out.println(customer.get());
+            System.out.println("customer founded");
         }else {
             System.out.println("no customer with this id");
         }

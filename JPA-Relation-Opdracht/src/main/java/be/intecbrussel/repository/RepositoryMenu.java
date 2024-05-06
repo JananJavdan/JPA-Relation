@@ -9,7 +9,7 @@ import java.util.Optional;
 public class RepositoryMenu {
     public void createMenu(EntityManager entityManager, Menu menu) {
         entityManager.getTransaction().begin();
-        entityManager.persist(menu);
+        entityManager.merge(menu);
         entityManager.getTransaction().commit();
 }
 public Optional<Menu> findMenu(EntityManager entityManager, int id) {

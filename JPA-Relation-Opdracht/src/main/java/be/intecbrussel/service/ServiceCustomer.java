@@ -16,6 +16,7 @@ public class ServiceCustomer {
         entityManager.close();
     }
 
+
     public Optional<Customer> findCustomer(long id) {
         EntityManager entityManager = EntityManagerProvider.getEntityManager();
         Optional<Customer> customer = repositoryCustomer.findCustomer(entityManager, id);
