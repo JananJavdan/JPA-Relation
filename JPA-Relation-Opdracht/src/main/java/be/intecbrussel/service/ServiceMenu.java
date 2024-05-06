@@ -19,7 +19,7 @@ public class ServiceMenu {
         entityManager.close();
     }
 
-    public Optional<Menu> findUser(int id) {
+    public Optional<Menu> findMenu(int id) {
         EntityManager entityManager = EntityManagerProvider.getEntityManager();
         Optional<Menu> menu = repositoryMenu.findMenu(entityManager, id);
         entityManager.close();

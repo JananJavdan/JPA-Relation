@@ -8,17 +8,17 @@ import javax.persistence.EntityManager;
 import java.util.Optional;
 
 public class ServiceCustomer {
-    private RepositoryCustomer repositoryCustomerMenu = new RepositoryCustomer();
+    private RepositoryCustomer repositoryCustomer = new RepositoryCustomer();
 
     public void createCustomer(Customer customer) {
         EntityManager entityManager = EntityManagerProvider.getEntityManager();
-        repositoryCustomerMenu.createCustomer(entityManager, customer);
+        repositoryCustomer.createCustomer(entityManager, customer);
         entityManager.close();
     }
 
-    public Optional<Customer> findUser(long id) {
+    public Optional<Customer> findCustomer(long id) {
         EntityManager entityManager = EntityManagerProvider.getEntityManager();
-        Optional<Customer> customer = repositoryCustomerMenu.findCustomer(entityManager, id);
+        Optional<Customer> customer = repositoryCustomer.findCustomer(entityManager, id);
         entityManager.close();
         return customer;
     }
@@ -26,7 +26,7 @@ public class ServiceCustomer {
     public void updateCustomer(Customer customer) {
         EntityManager entityManager = EntityManagerProvider.getEntityManager();
         long customerId = customer.getCustomerNumber();
-        Optional<Customer> optionalCustomer = repositoryCustomerMenu.findCustomer(entityManager, customerId);
+        Optional<Customer> optionalCustomer = repositoryCustomer.findCustomer(entityManager, customerId);
         if (optionalCustomer.isEmpty()) {
             entityManager.close();
             return;
@@ -35,9 +35,9 @@ public class ServiceCustomer {
     public void deleteCustomer(long id)
     {
         EntityManager entityManager = EntityManagerProvider.getEntityManager();
-        Optional<Customer> customer = repositoryCustomerMenu.findCustomer(entityManager,id);
+        Optional<Customer> customer = repositoryCustomer.findCustomer(entityManager,id);
         if(customer.isPresent()) {
-            repositoryCustomerMenu.deleteCustomer(entityManager,customer.get());
+            repositoryCustomer.deleteCustomer(entityManager,customer.get());
         }
         else {
             System.out.println("not found");
